@@ -33,5 +33,13 @@ function calcOrder() {
       let planCost = planValue * quantity;
       orderForm.elements.planCost.value = planCost;
 
+      let subtotal = modelCost + planCost;
+      orderForm.elements.subtotal.value = subtotal;
+
+      let salesTax = subtotal * 0.05;
+      orderForm.elements.salesTax.value = salesTax;
+
+      let totalCost = subtotal + salesTax;
+      orderForm.elements.totalCost.value = totalCost;
 
 }
