@@ -26,7 +26,7 @@ function validateCard() {
    }
 
 function validateNumber() {
-   let cNum = document.getElementById("CardNumber")
+   let cNum = document.getElementById("cardNumber")
    if (cNum.validity.valueMissing) {
       cNum.setCustomValidity("Enter your credit card number.");
    } else if (cNum.validity.patternMismatch) {
