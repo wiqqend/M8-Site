@@ -12,6 +12,17 @@
 
 let subButton = document.getElementById("subButton");
 subButton.addEventListener("click", validateName);   
+subButton.addEventListener("click", validateCard);
+
+function validateCard() {
+   let card = document.forms.payment.elements.credit[0];
+   if (card.validity.valueMissing) {
+      card.setCustomValidity("Select your credit card");
+   } else {
+      card.setCustomValidity("");
+   }
+   }
+
 function validateName() {
    let cardName = document.getElementById("cardName");
    if (cardName.validity.valueMissing) {
