@@ -15,6 +15,9 @@ subButton.addEventListener("click", validateName);
 subButton.addEventListener("click", validateCard);
 subButton.addEventListener("click", validateNumber);
 
+subButton.addEventListener("click", validateMonth);
+subButton.addEventListener("click", validateYear);
+
 
 function validateCard() {
    let card = document.forms.payment.elements.credit[0];
@@ -35,6 +38,23 @@ function validateNumber() {
       cNum.setCustomValidity("");
    }
 }
+function validateMonth() {
+   let month = document.getElementById("expMonth");
+   if (month.selectedInfex === 0) {
+      month.setCustomValidity("Select the expiration month.");
+   } else {
+      month.setCustomValidity("");
+   }
+}
+function validateYear() {
+   let year = document.getElementById("expYear");
+   if (year.selectedIndex === 0) {
+      year.setCustomValidity("Select the expiration year.");
+   } else {
+      year.setCustomValidity("");
+   }}
+
+
 function validateName() {
    let cardName = document.getElementById("cardName");
    if (cardName.validity.valueMissing) {
