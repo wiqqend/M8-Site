@@ -10,23 +10,16 @@
       Filename: js06b.js
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let subButton = document.getElementById("subButton");
+subButton.addEventListener("click", validateName);   
+function validateName() {
+   let cardName = document.getElementById("cardName");
+   if (cardName.validity.valueMissing) {
+      cardName.setCustomValidity("Enter your name as it appears on the card.");
+   } else {
+      cardName.setCustomValidity("");
+   }
+}
 
 /* ------- Luhn Algorithm used for Validating Credit Card Numbers   ----- */
 
