@@ -27,19 +27,19 @@ function calcOrder() {
       let quantity = orderForm.elements.qty[qIndex].value;
 
       let modelCost = mValue * quantity;
-      orderForm.elements.modelCost.value = modelCost;
+      orderForm.elements.modelCost.value = modelCost.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
       let planValue = document.querySelector('input[name="plan"]:checked').value;
       let planCost = planValue * quantity;
-      orderForm.elements.planCost.value = planCost;
+      orderForm.elements.planCost.value = planCost.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
       let subtotal = modelCost + planCost;
-      orderForm.elements.subtotal.value = subtotal;
+      orderForm.elements.subtotal.value = subtotal.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
       let salesTax = subtotal * 0.05;
-      orderForm.elements.salesTax.value = salesTax;
+      orderForm.elements.salesTax.value = salesTax.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
       let totalCost = subtotal + salesTax;
-      orderForm.elements.totalCost.value = totalCost;
+      orderForm.elements.totalCost.value = totalCost.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
 }
