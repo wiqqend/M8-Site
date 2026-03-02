@@ -15,6 +15,10 @@ window.addEventListener("load", function() {
       let model = orderForm.elements.model;
 
       model.focus();
+      for (let i =0 ; i<orderForms.elements.length; i++) {
+            orderForm.elements[i].addEventListener("change", calcOrder);
+      }
+
       calcOrder();
 });
 
