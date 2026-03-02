@@ -13,6 +13,8 @@
 let subButton = document.getElementById("subButton");
 subButton.addEventListener("click", validateName);   
 subButton.addEventListener("click", validateCard);
+subButton.addEventListener("click", validateNumber);
+
 
 function validateCard() {
    let card = document.forms.payment.elements.credit[0];
@@ -23,6 +25,16 @@ function validateCard() {
    }
    }
 
+function validateNumber() {
+   let cNum = document.getElementById("CardNumber")
+   if (cNum.validity.valueMissing) {
+      cNum.setCustomValidity("Enter your credit card number.");
+   } else if (cNum.validity.patternMismatch) {
+      cNum.setCustomValidity("Enter a valid card number");
+   } else{
+      cNum.setCustomValidity("");
+   }
+}
 function validateName() {
    let cardName = document.getElementById("cardName");
    if (cardName.validity.valueMissing) {
